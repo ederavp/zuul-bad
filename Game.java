@@ -22,7 +22,7 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theatre, pub, lab, office,terrace,basement,kitchen,bathroom;
+        Room outside, theatre, pub, lab, office,roombumbum,lamata,AA,elbaraimas;
 
         // cuatro cuartos altas y bajas
 
@@ -35,24 +35,31 @@ public class Game
         pub = new Room("in the campus pub");
         lab = new Room("in a computing lab");
         office = new Room("in the computing admin office");
-        terrace = new Room("hola1");
-        basement = new Room("hola2");
-        kitchen = new Room("hola3");
-        bathroom = new Room("hola4");
+        roombumbum = new Room("in the room bum bum ");
+        lamata = new Room("in La Mata ");
+        AA = new Room("in the AA");
+        elbaraimas = new Room("in the Baraimas");
         
         // initialise room exits
-        outside.setExits("south",theatre);
-        outside.setExits("east",lab);
+        outside.setExits("south",lab);
+        outside.setExits("east",theatre);
         outside.setExits("west",pub);
         theatre.setExits("west", outside);
         pub.setExits("east", outside);
+        pub.setExits("up", lamata);
+        pub.setExits("down", AA);
         lab.setExits("north",outside);
         lab.setExits("east",office);
-        office.setExits("Weast", lab);
-        lab.setExits("up",terrace);
-        terrace.setExits("down",lab);
-        office.setExits("north",kitchen);
-        kitchen.setExits("west",bathroom);
+        office.setExits("west", lab);
+        theatre.setExits("up",roombumbum);
+        office.setExits("east",elbaraimas);
+        lamata.setExits("down",pub);
+        AA.setExits("up",pub);
+        roombumbum.setExits("down",theatre);
+
+
+
+
 
 
         currentRoom = outside;  // start game outside
